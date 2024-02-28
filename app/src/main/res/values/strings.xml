@@ -1,0 +1,32 @@
+<resources>
+    <string name="app_name">Delivery</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="btn_skip">Skip</string>
+    <string name="btn_next">Next</string>
+    <string name="header_onboarding_1">Quick Delivery At Your Doorstep</string>
+    <string name="text_onboarding_1">Enjoy quick pick-up and delivery to your destination</string>
+
+    <string name="header_onboarding_2">Flexible Payment</string>
+    <string name="text_onboarding_2">Different modes of payment either before and after delivery without stress</string>
+
+    <string name="header_onboarding_3">Real-time Tracking</string>
+    <string name="text_onboarding_3">Track your packages/items from the comfort of your home till final destination</string>
+    <string name="btn_sign_up">Sign up</string>
+    <string name="text_auth">Already have an account?</string>
+    <string name="text_sign_in">Sign in</string>
+
+    <string name="text_create_acc">Create an account</string>
+    <string name="text_complete_sign">Complete the sign up process to get started</string>
+    <string name="text_full_name">Full name</string>
+    <string name="hint_full_name">Ivanov Ivan</string>
+    <string name="text_phone_number">Phone Number</string>
+    <string name="hint_phone_number">+7(999)999-99-99</string>
+    <string name="text_email">Email Address</string>
+    <string name="hint_email">************@mail.ru</string>
+    <string name="text_password">Password</string>
+    <string name="hint_password">**********</string>
+    <string name="text_confirm_password">Confirm Password</string>
+    <string name="text_policy">By ticking this box, you agree to our</string>
+
+</resources>
