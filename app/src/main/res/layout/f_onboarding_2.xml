@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".onboarding.Fragment2"
-    android:background="@color/background">
+    android:background="?attr/mainAppBackground">
 
     <ImageView
         android:id="@+id/imageView2"
@@ -39,14 +39,14 @@
         android:layout_marginTop="10dp"
         android:text="@string/text_onboarding_2"
         android:textAlignment="center"
-        android:textColor="@color/white"
+        android:textColor="@color/textGrayColor"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/textView3" />
 
     <Button
-        android:id="@+id/btnSkip2"
+        android:id="@+id/btnOnb2Skip"
         style="@style/ButtonBorder"
         android:layout_width="100dp"
         android:layout_height="50dp"
@@ -59,7 +59,7 @@
         app:layout_constraintVertical_bias="1.0" />
 
     <Button
-        android:id="@+id/btnNext2"
+        android:id="@+id/btnOnb2Next"
         style="@style/Button"
         android:layout_width="100dp"
         android:layout_height="50dp"
@@ -69,7 +69,7 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="1.0"
-        app:layout_constraintStart_toEndOf="@+id/btnSkip2"
+        app:layout_constraintStart_toEndOf="@+id/btnOnb2Skip"
         app:layout_constraintTop_toBottomOf="@+id/textView4"
         app:layout_constraintVertical_bias="1.0" />
 </androidx.constraintlayout.widget.ConstraintLayout>

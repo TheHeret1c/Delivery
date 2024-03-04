@@ -27,6 +27,20 @@
     <string name="text_password">Password</string>
     <string name="hint_password">**********</string>
     <string name="text_confirm_password">Confirm Password</string>
-    <string name="text_policy">By ticking this box, you agree to our</string>
+    <string name="text_policy">By ticking this box, you agree to our <font fgcolor="@colors/warningColor">Terms and conditions and private policy</font></string>
+    <string name="text_or_log">or log in using</string>
 
+    <string name="text_welcome">Welcome Back</string>
+    <string name="text_fill">Fill in your email and password to continue</string>
+    <string name="text_remember">Remember password</string>
+    <string name="text_forgot">Forgot password?</string>
+    <string name="text_log">Log In</string>
+    <string name="text_sign_up">Sign Up</string>
+
+    <string name="text_sendOTP">Send OTP</string>
+    <string name="btn_set_new">Set New Password</string>
+
+    <string name="text_statements">Statements &amp; Reports</string>
+    <string name="text_mute">mute, unmute, set location &amp; tracking setting</string>
+    <string name="text_card">Card &amp; Back account settings</string>
 </resources>

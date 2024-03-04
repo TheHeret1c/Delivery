@@ -13,6 +13,9 @@
         <action
             android:id="@+id/action_splashScreenFragment_to_fragment1"
             app:destination="@id/fragment1" />
+        <action
+            android:id="@+id/action_splashScreenFragment_to_fragmentAuthorization"
+            app:destination="@id/fragmentAuthorization" />
     </fragment>
     <fragment
         android:id="@+id/fragment1"
@@ -22,6 +25,9 @@
         <action
             android:id="@+id/action_fragment1_to_fragment2"
             app:destination="@id/fragment2" />
+        <action
+            android:id="@+id/action_fragment1_to_fragmentCreateAccount"
+            app:destination="@id/fragmentCreateAccount" />
     </fragment>
     <fragment
         android:id="@+id/fragment2"
@@ -31,10 +37,134 @@
         <action
             android:id="@+id/action_fragment2_to_fragment3"
             app:destination="@id/fragment3" />
+        <action
+            android:id="@+id/action_fragment2_to_fragmentCreateAccount"
+            app:destination="@id/fragmentCreateAccount" />
     </fragment>
     <fragment
         android:id="@+id/fragment3"
         android:name="com.example.delivery.onboarding.Fragment3"
         android:label="fragment_3"
-        tools:layout="@layout/f_onboarding_3" />
+        tools:layout="@layout/f_onboarding_3" >
+        <action
+            android:id="@+id/action_fragment3_to_fragmentCreateAccount"
+            app:destination="@id/fragmentCreateAccount" />
+        <action
+            android:id="@+id/action_fragment3_to_fragmentAuthorization"
+            app:destination="@id/fragmentAuthorization" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentCreateAccount"
+        android:name="com.example.delivery.LoginSignUp.FragmentCreateAccount"
+        android:label="f_create_account"
+        tools:layout="@layout/f_create_account" >
+        <action
+            android:id="@+id/action_fragmentCreateAccount_to_fragmentAuthorization"
+            app:destination="@id/fragmentAuthorization" />
+    </fragment>
+    <fragment
+        android:id="@+id/fragmentAuthorization"
+        android:name="com.example.delivery.LoginSignUp.FragmentAuthorization"
+        android:label="f_authorization"
+        tools:layout="@layout/f_authorization" >
+        <action
+            android:id="@+id/action_fragmentAuthorization_to_mainFragment"
+            app:destination="@id/mainFragment" />
+        <action
+            android:id="@+id/action_fragmentAuthorization_to_forgotPasswordFragment"
+            app:destination="@id/forgotPasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/addPayMethodFragment"
+        android:name="com.example.delivery.profile.AddPayMethodFragment"
+        android:label="fragment_add_pay_method"
+        tools:layout="@layout/fragment_add_pay_method" />
+    <fragment
+        android:id="@+id/forgotPasswordFragment"
+        android:name="com.example.delivery.LogInSugnUp.ForgotPasswordFragment"
+        android:label="fragment_forgot_password"
+        tools:layout="@layout/fragment_forgot_password" >
+        <action
+            android:id="@+id/action_forgotPasswordFragment_to_OTPVerificationFragment"
+            app:destination="@id/OTPVerificationFragment" />
+        <action
+            android:id="@+id/action_forgotPasswordFragment_to_fragmentAuthorization"
+            app:destination="@id/fragmentAuthorization" />
+    </fragment>
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="com.example.delivery.main.HomeFragment"
+        android:label="fragment_home"
+        tools:layout="@layout/fragment_home" />
+    <fragment
+        android:id="@+id/mainFragment"
+        android:name="com.example.delivery.main.MainFragment"
+        android:label="fragment_main"
+        tools:layout="@layout/fragment_main" >
+        <action
+            android:id="@+id/action_mainFragment_to_addPayMethodFragment"
+            app:destination="@id/addPayMethodFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_notificationSetFragment"
+            app:destination="@id/notificationSetFragment" />
+        <action
+            android:id="@+id/action_mainFragment_to_sendPackageFragment"
+            app:destination="@id/sendPackageFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/newPasswordFragment"
+        android:name="com.example.delivery.LogInSugnUp.NewPasswordFragment"
+        android:label="fragment_new_password"
+        tools:layout="@layout/fragment_new_password" >
+        <action
+            android:id="@+id/action_newPasswordFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/notificationSetFragment"
+        android:name="com.example.delivery.profile.NotificationSetFragment"
+        android:label="fragment_notification_set"
+        tools:layout="@layout/fragment_notification_set" />
+    <fragment
+        android:id="@+id/OTPVerificationFragment"
+        android:name="com.example.delivery.LogInSugnUp.OTPVerificationFragment"
+        android:label="fragment_o_t_p_verification"
+        tools:layout="@layout/fragment_o_t_p_verification" >
+        <action
+            android:id="@+id/action_OTPVerificationFragment_to_newPasswordFragment"
+            app:destination="@id/newPasswordFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/profileFragment"
+        android:name="com.example.delivery.main.ProfileFragment"
+        android:label="fragment_profile"
+        tools:layout="@layout/fragment_profile" />
+    <fragment
+        android:id="@+id/sendPackageFragment"
+        android:name="com.example.delivery.SendPackageFragment"
+        android:label="fragment_send_package"
+        tools:layout="@layout/fragment_send_package" >
+        <action
+            android:id="@+id/action_sendPackageFragment_to_transactionFragment"
+            app:destination="@id/transactionFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/trackFragment"
+        android:name="com.example.delivery.main.TrackFragment"
+        android:label="fragment_track"
+        tools:layout="@layout/fragment_track" />
+    <fragment
+        android:id="@+id/transactionFragment"
+        android:name="com.example.delivery.TransactionFragment"
+        android:label="fragment_transaction"
+        tools:layout="@layout/fragment_transaction" >
+        <action
+            android:id="@+id/action_transactionFragment_to_mainFragment"
+            app:destination="@id/mainFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/walletFragment"
+        android:name="com.example.delivery.main.WalletFragment"
+        android:label="fragment_wallet"
+        tools:layout="@layout/fragment_wallet" />
 </navigation>

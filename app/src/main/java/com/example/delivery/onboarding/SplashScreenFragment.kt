@@ -10,11 +10,11 @@ import android.view.ViewGroup
 import com.example.delivery.R
 import android.os.Handler
 import android.os.Looper
+import android.util.Log
 import androidx.navigation.fragment.findNavController
+import com.example.delivery.utils.impl.LocalRepositoryImpl
 
 class SplashScreenFragment : Fragment() {
-
-
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
@@ -27,13 +27,13 @@ class SplashScreenFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         Handler(Looper.getMainLooper()).postDelayed({
             val controller = findNavController()
-            val sharedPref = context.getSharedPreferences("kotlincodes", Context.MODE_PRIVATE)
 
-            if (sharedPref.getBoolean("first-launch", true)){
+            if (LocalRepositoryImpl(requireContext()).getIsFirstExec()){
                 controller.navigate(R.id.fragment1)
             } else {
-                controller.navigate()
+                controller.navigate(R.id.fragmentAuthorization)
             }
+            Log.e("TEST", "First - " + LocalRepositoryImpl(requireContext()).getIsFirstExec())
 
         }, 2000)
     }

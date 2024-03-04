@@ -3,11 +3,14 @@
     <color name="black">#FF000000</color>
     <color name="white">#FFFFFFFF</color>
     <color name="background">#FF000D1D</color>
+    <color name="textGrayColor">#FF3A3A3A</color>
     <color name="textBlueColor">#FF0560FA</color>
     <color name="primaryColor">#FF0560FA</color>
+    <color name="secondaryColor">#FFEC8000</color>
     <color name="successColor">#FF33B469</color>
     <color name="warningColor">#FFEBBC2E</color>
     <color name="infoColor">#FF2F80ED</color>
     <color name="errorColor">#FFED3A3A</color>
+    <color name="grayLightColor">#FFCFCFCF</color>
     <color name="grayColor">#FFA7A7A7</color>
 </resources>

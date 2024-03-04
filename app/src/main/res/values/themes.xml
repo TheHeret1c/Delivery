@@ -6,5 +6,8 @@
 
         <item name="mainButtonBackgroundColor">@color/primaryColor</item>
         <item name="mainButtonBorderColor">@color/primaryColor</item>
+        <item name="mainEditTextBorderColor">@color/grayColor</item>
+        <item name="mainLayoutBackgroundColor">@color/grayLightColor</item>
+        <item name="mainAppBackground">@color/white</item>
     </style>
 </resources>

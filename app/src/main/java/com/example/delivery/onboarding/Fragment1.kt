@@ -8,30 +8,34 @@ import android.view.ViewGroup
 import android.widget.Button
 import androidx.navigation.fragment.findNavController
 import com.example.delivery.R
+import com.example.delivery.databinding.FOnboarding1Binding
 
 
 class Fragment1 : Fragment() {
+
+    private var _binding : FOnboarding1Binding? = null
+    private val binding get() = _binding!!
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
         savedInstanceState: Bundle?
     ): View? {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.f_onboarding_1, container, false)
+        _binding = FOnboarding1Binding.inflate(inflater, container, false)
+        val view = binding.root
+        return view
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val btnSkip = view.findViewById<Button>(R.id.btnSkip)
-        val btnNext = view.findViewById<Button>(R.id.btnNext)
 
         val controller = findNavController()
 
-        btnSkip.setOnClickListener {
-
+        binding.btnOnb1Skip.setOnClickListener {
+            controller.navigate(R.id.fragmentAuthorization)
         }
 
-        btnNext.setOnClickListener {
+        binding.btnOnb1Next.setOnClickListener {
             controller.navigate(R.id.fragment2)
         }
     }
