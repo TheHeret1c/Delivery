@@ -1,0 +1,333 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/frameLayout6"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".authorization.SignUpFragment" >
+
+    <TextView
+        android:id="@+id/textViewSU_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="32dp"
+        android:fontFamily="@font/roboto"
+        android:text="Create an account"
+        android:textColor="@color/text_color_dark"
+        android:textSize="24sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/textViewSU_2"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textViewSU_2"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginEnd="32dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="Complete the sign up process to get started"
+        android:textColor="@color/gray_color_dark"
+        android:textSize="14sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewSU_1" />
+
+    <TextView
+        android:id="@+id/textViewSU_3"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="Full name"
+        android:textColor="@color/gray_color_dark"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/fsignup_etName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/fsignup_etName"
+        android:layout_width="0dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/edit_text_style"
+        android:ems="10"
+        android:fontFamily="@font/roboto_bold"
+        android:hint="Ivan Ivanov"
+        android:inputType="text"
+        android:paddingLeft="16dp"
+        android:textColor="@color/text_color_light"
+        android:textColorHint="@color/gray_color_light"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewSU_4"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewSU_4"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="Phone number"
+        android:textColor="@color/gray_color_dark"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/fsignup_etPhone"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/fsignup_etPhone"
+        android:layout_width="0dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/edit_text_style"
+        android:ems="10"
+        android:fontFamily="@font/roboto_bold"
+        android:hint="+7(911)999-99-99"
+        android:inputType="phone"
+        android:paddingLeft="16dp"
+        android:textColor="@color/text_color_light"
+        android:textColorHint="@color/gray_color_light"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewSU_5"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewSU_5"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="Email address"
+
+        android:textColor="@color/gray_color_dark"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/fsignup_etEmail"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/fsignup_etEmail"
+        android:layout_width="0dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/edit_text_style"
+        android:ems="10"
+        android:fontFamily="@font/roboto_bold"
+        android:hint="******@mail.com"
+        android:inputType="textEmailAddress"
+        android:paddingLeft="16dp"
+        android:textColor="@color/text_color_light"
+        android:textColorHint="@color/gray_color_light"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewSU_6"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewSU_6"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="Password"
+        android:textColor="@color/gray_color_dark"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/fsignup_etPassword"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/fsignup_etPassword"
+        android:layout_width="0dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="8dp"
+        android:background="@drawable/edit_text_style"
+        android:ems="10"
+        android:fontFamily="@font/roboto_bold"
+        android:hint="**********"
+        android:inputType="textPassword"
+        android:paddingLeft="16dp"
+        android:paddingRight="8dp"
+        android:textColor="@color/text_color_light"
+        android:textColorHint="@color/gray_color_light"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/textViewSU_7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewSU_7"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:fontFamily="@font/roboto_bold"
+        android:text="Confirm password"
+        android:textColor="@color/gray_color_dark"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/fsignup_etPasswordConfirm"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <EditText
+        android:id="@+id/fsignup_etPasswordConfirm"
+        android:layout_width="0dp"
+        android:layout_height="44dp"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="64dp"
+        android:background="@drawable/edit_text_style"
+        android:ems="10"
+        android:fontFamily="@font/roboto_bold"
+        android:hint="**********"
+        android:inputType="textPassword"
+        android:paddingLeft="16dp"
+        android:paddingRight="8dp"
+        android:textColor="@color/text_color_light"
+        android:textColorHint="@color/gray_color_light"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/fsignup_chbAgree"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <CheckBox
+        android:id="@+id/fsignup_chbAgree"
+        android:layout_width="300dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="16dp"
+        android:buttonTint="@color/main_color"
+        android:fontFamily="@font/roboto"
+        android:text="@string/Bytickingthis"
+        android:textAlignment="center"
+        android:textColor="@color/gray_color_dark"
+        app:layout_constraintBottom_toTopOf="@+id/fsignup_btnSignUp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/fsignup_btnSignUp"
+        style="@style/primaryButton"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="32dp"
+        android:layout_marginEnd="32dp"
+        android:layout_marginBottom="16dp"
+        android:backgroundTint="@color/gray_color_dark"
+        android:clickable="false"
+        android:text="@string/btnSignUp"
+        app:layout_constraintBottom_toTopOf="@+id/linearLayoutSU_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <LinearLayout
+        android:id="@+id/linearLayoutSU_1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="16dp"
+        android:orientation="horizontal"
+        app:layout_constraintBottom_toTopOf="@+id/textViewSU_9"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/textViewSU_8"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto"
+            android:text="@string/fr3_txt3"
+            android:textColor="@color/gray_color_dark" />
+
+        <TextView
+            android:id="@+id/fsignup_btnSignIn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:fontFamily="@font/roboto"
+            android:text="@string/btnSignIn"
+            android:textColor="@color/main_color"
+            android:textStyle="bold" />
+
+    </LinearLayout>
+
+    <TextView
+        android:id="@+id/textViewSU_9"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:fontFamily="@font/roboto"
+        android:text="or sign in using"
+        android:textColor="@color/gray_color_dark"
+        app:layout_constraintBottom_toTopOf="@+id/imageViewSU_1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <ImageView
+        android:id="@+id/imageViewSU_1"
+        android:layout_width="16dp"
+        android:layout_height="16dp"
+        android:layout_marginBottom="32dp"
+        android:layout_weight="1"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:srcCompat="@drawable/img_g" />
+
+    <ImageView
+        android:id="@+id/fsignup_btnShowPass"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/img_eye_slash"
+        app:layout_constraintBottom_toBottomOf="@+id/fsignup_etPassword"
+        app:layout_constraintEnd_toEndOf="@+id/fsignup_etPassword"
+        app:layout_constraintTop_toTopOf="@+id/fsignup_etPassword" />
+
+    <ImageView
+        android:id="@+id/fsignup_btnShowPassConfirm"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="8dp"
+        android:src="@drawable/img_eye_slash"
+        app:layout_constraintBottom_toBottomOf="@+id/fsignup_etPasswordConfirm"
+        app:layout_constraintEnd_toEndOf="@+id/fsignup_etPasswordConfirm"
+        app:layout_constraintTop_toTopOf="@+id/fsignup_etPasswordConfirm" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

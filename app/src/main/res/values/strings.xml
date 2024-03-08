@@ -1,0 +1,24 @@
+<resources>
+    <string name="app_name">Delivery</string>
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="fr1_txt1">Quick Delivery At Your\nDoorstep</string>
+    <string name="fr1_txt2">Enjoy quick pick-up and delivery to\nyour destination</string>
+    <string name="fr2_txt1">Flexible Payment</string>
+    <string name="fr2_txt2">Different modes of payment either\nbefore and after delivery without stress</string>
+    <string name="fr3_txt1">Real-time Tracking</string>
+    <string name="fr3_txt2">Track your packages/items from the\ncomfort of your home till final destination</string>
+    <string name="btnSkip">Skip</string>
+    <string name="btnNext">Next</string>
+    <string name="btnSignUp">Sign Up</string>
+    <string name="btnSignIn">Sign In</string>
+    <string name="fr3_txt3">Already have an account?</string>
+    <string name="Bytickingthis">By ticking this box, you agree to our <font color='#EBBC2E'>Terms and conditions and private policy</font></string>
+    <string name="btnLogIn">Log in</string>
+    <string name="forgot">Forgot password?</string>
+    <string name="send">Send OTP</string>
+    <string name="setnewpass">Set new password</string>
+    <string name="mut"><![CDATA[mute, unmute, set location & tracking setting]]></string>
+    <string name="Statements"><![CDATA[Statements & Reports]]></string>
+    <string name="Card"><![CDATA[Card & Bank account settings]]></string>
+</resources>
