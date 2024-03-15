@@ -16,10 +16,21 @@ import io.github.jan.supabase.postgrest.postgrest
 import kotlinx.coroutines.CoroutineScope
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.launch
+import kotlinx.datetime.Clock
 import kotlinx.datetime.DateTimeUnit
+import kotlinx.datetime.Instant
+import kotlinx.datetime.LocalDateTime
+import kotlinx.datetime.LocalTime
+import kotlinx.datetime.TimeZone
+import kotlinx.datetime.toLocalDateTime
 import kotlinx.serialization.Serializable
 import java.sql.Timestamp
-import kotlin.reflect.jvm.internal.impl.types.error.ErrorType
+import java.time.LocalDate
+import java.time.format.DateTimeFormatter
+import java.util.Calendar
+import kotlin.random.Random
+
+
 
 class DataBaseImpl : DataBaseAPI {
 
@@ -117,17 +128,19 @@ class DataBaseImpl : DataBaseAPI {
         }
     }
 
-    override fun get_profile() {
-        CoroutineScope(Dispatchers.IO).launch {
-            try {
-                val profiles = supabase.from("profiles").select().decodeList<profiles>()
-                for (i in profiles) {
-                    Log.e("PROFILE", "Profile " + i.id + " = " + i.toString())
+    override suspend fun get_profile(email: String) : Result<Int?, String> {
+        try {
+            val profile = supabase.from("profiles").select() {
+                filter {
+                    eq("email_address", email)
                 }
-            } catch (e: Exception) {
-                Log.e("EXCEPTION", "Exception count profile: " + e.message)
-            }
+            }.decodeSingle<profiles>()
 
+            return Result.Success(profile.id)
+
+        } catch (e: Exception) {
+            //Log.e("EXCEPTION", "Exception count profile: " + e.message)
+            return Result.Error("Профиль не найден")
         }
     }
 
@@ -136,6 +149,7 @@ class DataBaseImpl : DataBaseAPI {
             try {
                 val profile = profiles(full_name = full_name, phone_number = phone_number, email_address = email, avatar_file = "default")
                 supabase.postgrest["profiles"].insert(profile)
+
             } catch (e : Exception) {
                 //Log.e("EXCEPTION", "Exception add profile: " + e.toString())
                 Log.e("EXCEPTION", "Exception add profile: " + e.message)
@@ -160,27 +174,103 @@ class DataBaseImpl : DataBaseAPI {
         }
     }
 
-    override fun add_location() {
-        TODO("Not yet implemented")
+    override suspend fun add_location(profile: Int, address: String, state_country: String, phone_number: String, others: String) : Int? {
+        try {
+            val location = locations(profile = profile, address = address, state_country = state_country, phone_number = phone_number, others = if (others != "") others else "")
+            var new_location = supabase.from("locations").insert(location) {
+                select()
+            }.decodeSingle<locations>()
+            return new_location.id
+        } catch (e: Exception) {
+            Log.e("EXCEPTION", "Exception add location: " + e.message)
+            return null
+        }
     }
 
-    override fun get_location() {
-        TODO("Not yet implemented")
+    override suspend fun get_location(profile_id: Int, address: String) : Int? {
+        try {
+            val location = supabase.from("locations").select() {
+                filter {
+                    eq("profile", profile_id)
+                    eq("address", address)
+                }
+            }.decodeList<locations>()
+
+            if (location.count() == 0) {
+                return null
+            }
+            return location[0].id
+
+        } catch (e: Exception) {
+            Log.e("EXCEPTION", "Exception get location: " + e.message)
+            return null
+        }
     }
 
-    override fun add_package() {
-        TODO("Not yet implemented")
+    override suspend fun add_package(profile: Int, package_items: String, weight_item: String, worth_items: String, origin: Int,
+                                     instant_delivery: Boolean, delivery_charges: Float, instant_delivery_charges: Float, tax_service_charges: Float,
+                                     tracking_number: String) : Int? {
+        try {
+            val kit = packages(profile = profile, package_items = package_items, weight_item = weight_item, worth_items = worth_items,
+                origin = origin, instant_delivery = instant_delivery, delivery_charges = delivery_charges,
+                instant_delivery_charges = instant_delivery_charges, tax_service_charges = tax_service_charges, tracking_number = tracking_number, rider = Random.nextInt(0, 10))
+
+            val new_package = supabase.from("packages").insert(kit) {
+                select()
+            }.decodeSingle<packages>()
+
+            return new_package.id
+        } catch (e: Exception) {
+            Log.e("EXCEPTION", "Exception add package: " + e.message)
+            return null
+        }
     }
 
     override fun get_package() {
         TODO("Not yet implemented")
     }
 
-    override fun add_delivery() {
-        TODO("Not yet implemented")
+    override suspend fun add_delivery(new_package: Int, destination: Int) : Int? {
+        try {
+            val delivery = deliveries(`package` = new_package, destination = destination)
+            val new_delivery = supabase.from("deliveries").insert(delivery) {
+                select()
+            }.decodeSingle<deliveries>()
+
+            return new_delivery.id
+        } catch (e: Exception) {
+            Log.e("EXCEPTION", "Exception add delivery: " + e.message)
+            return null
+        }
     }
 
-    override fun get_deliveries() {
+    override suspend fun get_delivery(package_id: Int) : Int? {
+        try {
+            val delivery = supabase.from("deliveries").select {
+                filter {
+                    eq("package", package_id)
+                }
+            }.decodeSingle<deliveries>()
+
+            return delivery.id
+        } catch (e: Exception) {
+            Log.e("EXCEPTION", "Exception get delivery: " + e.message)
+            return null
+        }
+    }
+
+    override suspend fun add_transaction(profile_id: Int, package_id: Int, amount: Float, comment: String) {
+        try {
+            val time: LocalDateTime = Clock.System.now().toLocalDateTime(TimeZone.currentSystemDefault())
+            val transaction = transactions(profile = profile_id, `package` = package_id, amount = amount, comment = comment, ts = time)
+
+            supabase.from("transactions").insert(transaction)
+        } catch (e: Exception) {
+            Log.e("EXCEPTION", "Exception add transaction: " + e.message)
+        }
+    }
+
+    override suspend fun get_transaction() {
         TODO("Not yet implemented")
     }
 
@@ -190,6 +280,16 @@ class DataBaseImpl : DataBaseAPI {
 
     override fun add_feedback() {
         TODO("Not yet implemented")
+    }
+
+    override suspend fun add_routes(profile_id: Int, delivery_id: Int) {
+        try {
+            val route = routes(profile = profile_id, delivery = delivery_id, step = Random.nextInt(1, 4))
+
+            supabase.from("routes").insert(route)
+        } catch (e: Exception) {
+            Log.e("EXCEPTION", "Exception add route: " + e.message)
+        }
     }
 
     override fun get_routes() {
@@ -296,6 +396,6 @@ class DataBaseImpl : DataBaseAPI {
         val `package` : Int = 0,
         val amount : Float = 0.0f,
         val comment : String = "",
-        val ts : DateTimeUnit.DateBased
+        val ts : LocalDateTime
     )
 }

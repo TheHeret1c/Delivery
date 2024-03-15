@@ -1,5 +1,7 @@
 package com.example.delivery.utils
 
+import com.example.delivery.utils.impl.Result
+
 interface DataBaseAPI {
 
     fun getProfiles()
@@ -24,7 +26,7 @@ interface DataBaseAPI {
 
     // Profiles
 
-    fun get_profile()
+    suspend fun get_profile(email: String) : Result<Int?, String>
 
     fun add_profile(full_name : String, phone_number: String, email: String)
 
@@ -33,23 +35,31 @@ interface DataBaseAPI {
 
     // Location
 
-    fun add_location()
+    suspend fun add_location(profile: Int, address: String, state_country: String, phone_number: String, others: String) : Int?
 
-    fun get_location()
+    suspend fun get_location(profile_id: Int, address: String) : Int?
 
 
     // Packages
 
-    fun add_package()
+    suspend fun add_package(profile: Int, package_items: String, weight_item: String, worth_items: String, origin: Int,
+                            instant_delivery: Boolean, delivery_charges: Float, instant_delivery_charges: Float, tax_service_charges: Float,
+                            tracking_number: String) : Int?
 
     fun get_package()
 
 
     // Deliveries
 
-    fun add_delivery()
+    suspend fun add_delivery(new_package: Int, destination: Int) : Int?
 
-    fun get_deliveries()
+    suspend fun get_delivery(package_id: Int) : Int?
+
+
+    // Transactions
+    suspend fun add_transaction(profile_id: Int, package_id: Int, amount: Float, comment: String)
+
+    suspend fun get_transaction()
 
 
     // Feedbacks
@@ -60,6 +70,8 @@ interface DataBaseAPI {
 
 
     // Routes
+
+    suspend fun add_routes(profile_id: Int, delivery_id: Int)
 
     fun get_routes()
 

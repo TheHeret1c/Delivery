@@ -130,7 +130,7 @@ class LogInFragment : Fragment() {
             LocalRepositoryImpl(requireContext()).setRememberPassword("")
         }
 
-
+        LocalRepositoryImpl(requireContext()).setEmail(binding.floginEtEmailAddress.text.toString())
         findNavController().navigate(R.id.mainFragment)
     }
 

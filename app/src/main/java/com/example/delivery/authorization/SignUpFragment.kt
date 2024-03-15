@@ -161,6 +161,6 @@ class SignUpFragment : Fragment() {
         CoroutineScope(Dispatchers.IO).launch {
             DataBaseImpl().register(binding.fsignupEtEmail.text.toString(), binding.fsignupEtPassword.text.toString())
         }
-        findNavController().navigate(R.id.mainFragment)
+        findNavController().navigate(R.id.logInFragment)
     }
 }

@@ -15,7 +15,6 @@
         android:layout_marginTop="96dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
-        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -701,7 +700,7 @@
                     android:elevation="2dp"
                     android:ems="10"
                     android:hint="Weight of item(kg)"
-                    android:inputType="text"
+                    android:inputType="number|numberDecimal"
                     android:padding="8dp"
                     android:textColorHint="@color/gray_color_light"
                     android:textSize="14sp" />
@@ -717,7 +716,7 @@
                     android:elevation="2dp"
                     android:ems="10"
                     android:hint="Worth of Items"
-                    android:inputType="text"
+                    android:inputType="number|numberDecimal"
                     android:padding="8dp"
                     android:textColorHint="@color/gray_color_light"
                     android:textSize="14sp" />
@@ -852,6 +851,7 @@
         android:layout_marginTop="96dp"
         android:layout_marginEnd="32dp"
         android:layout_marginBottom="32dp"
+        android:visibility="gone"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
@@ -887,6 +887,7 @@
                     android:textSize="14sp" />
 
                 <TextView
+                    android:id="@+id/fsendpack_tvOriginAddress"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -894,6 +895,7 @@
                     android:textColor="@color/gray_color_dark" />
 
                 <TextView
+                    android:id="@+id/fsendpack_tvOriginPhone"
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
@@ -903,6 +905,7 @@
             </LinearLayout>
 
             <LinearLayout
+                android:id="@+id/fsendpack_layoutDestinations"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
                 android:layout_marginBottom="16dp"
@@ -919,6 +922,7 @@
                     android:textStyle="bold" />
 
                 <LinearLayout
+                    android:id="@+id/fsendpack_layoutDestin1"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginBottom="8dp"
@@ -928,7 +932,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Mbaraugba, Ovom Amaa Asaa, Abia state"
+                        android:text="1. Mbaraugba, Ovom Amaa Asaa, Abia state"
                         android:textColor="@color/gray_color_dark" />
 
                     <TextView
@@ -940,6 +944,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/fsendpack_layoutDestin2"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginBottom="8dp"
@@ -950,7 +955,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Mbaraugba, Ovom Amaa Asaa, Abia state"
+                        android:text="2. Mbaraugba, Ovom Amaa Asaa, Abia state"
                         android:textColor="@color/gray_color_dark" />
 
                     <TextView
@@ -962,6 +967,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/fsendpack_layoutDestin3"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginBottom="8dp"
@@ -972,7 +978,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Mbaraugba, Ovom Amaa Asaa, Abia state"
+                        android:text="3. Mbaraugba, Ovom Amaa Asaa, Abia state"
                         android:textColor="@color/gray_color_dark" />
 
                     <TextView
@@ -984,6 +990,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/fsendpack_layoutDestin4"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginBottom="8dp"
@@ -994,7 +1001,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Mbaraugba, Ovom Amaa Asaa, Abia state"
+                        android:text="4. Mbaraugba, Ovom Amaa Asaa, Abia state"
                         android:textColor="@color/gray_color_dark" />
 
                     <TextView
@@ -1006,6 +1013,7 @@
                 </LinearLayout>
 
                 <LinearLayout
+                    android:id="@+id/fsendpack_layoutDestin5"
                     android:layout_width="match_parent"
                     android:layout_height="match_parent"
                     android:layout_marginBottom="8dp"
@@ -1016,7 +1024,7 @@
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:layout_weight="1"
-                        android:text="Mbaraugba, Ovom Amaa Asaa, Abia state"
+                        android:text="5. Mbaraugba, Ovom Amaa Asaa, Abia state"
                         android:textColor="@color/gray_color_dark" />
 
                     <TextView
@@ -1060,6 +1068,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
+                        android:id="@+id/fsendpack_tvPackage"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="Books ans stationary, Garri Ngwa"
@@ -1084,6 +1093,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
+                        android:id="@+id/fsendpack_tvWeight"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="1000kg"
@@ -1108,6 +1118,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
+                        android:id="@+id/fsendpack_tvWorth"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="N50,000"
@@ -1131,6 +1142,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
+                        android:id="@+id/fsendpack_tvTrack"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:text="R-7458-4567-4434-5854"
@@ -1180,6 +1192,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
+                        android:id="@+id/fsendpack_tvDeliveryCharges"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto"
@@ -1206,6 +1219,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
+                        android:id="@+id/fsendpack_tvInstantDelivery"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto"
@@ -1232,6 +1246,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
+                        android:id="@+id/fsendpack_tvTax"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto"
@@ -1264,6 +1279,7 @@
                         app:layout_constraintTop_toTopOf="parent" />
 
                     <TextView
+                        android:id="@+id/fsendpack_tvAmount"
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
                         android:fontFamily="@font/roboto"

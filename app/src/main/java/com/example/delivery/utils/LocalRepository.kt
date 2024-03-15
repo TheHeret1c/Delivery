@@ -16,4 +16,8 @@ interface LocalRepository {
     fun setEmailForgotPassword(value: String)
 
     fun getEmailForgotPassword() : String
+
+    fun setEmail(value: String)
+
+    fun getEmail() : String
 }

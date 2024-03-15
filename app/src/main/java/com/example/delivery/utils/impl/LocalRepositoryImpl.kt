@@ -53,6 +53,16 @@ class LocalRepositoryImpl(
         return sharedPreferences.getString(EMAIL_FORGOT_PASSWORD, "").toString()
     }
 
+    override fun setEmail(value: String) {
+        sharedPreferences.edit()
+            .putString(EMAIL_AUTH_KEY, value)
+            .apply()
+    }
+
+    override fun getEmail(): String {
+        return sharedPreferences.getString(EMAIL_AUTH_KEY, "").toString()
+    }
+
     companion object {
         private const val APP_DATA = "APP_DATA"
 
@@ -64,5 +74,7 @@ class LocalRepositoryImpl(
         private const val REMEMBER_PASSWORD_KEY = "password"
 
         private const val EMAIL_FORGOT_PASSWORD = "email_forgot_password"
+
+        private const val EMAIL_AUTH_KEY = "email_auth"
     }
 }
