@@ -35,7 +35,9 @@ import kotlin.random.Random
 class DataBaseImpl : DataBaseAPI {
 
     companion object {
-        private const val API_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6InRod3p4a2FqY3Fscmt2dG9xaXVrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDg5MzQ0OTEsImV4cCI6MjAyNDUxMDQ5MX0.8k6uBTbNsW-GBmFvacD_8_P1m4Z1F4Q7RKZzteMrz-w"
+        private const val API_KEY = "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6" +
+                "InRod3p4a2FqY3Fscmt2dG9xaXVrIiwicm9sZSI6ImFub24iLCJpYXQiOjE3MDg5MzQ0OTEsImV4cCI6MjAyNDUxMDQ" +
+                "5MX0.8k6uBTbNsW-GBmFvacD_8_P1m4Z1F4Q7RKZzteMrz-w"
 
         private val supabase = createSupabaseClient(
             supabaseUrl = "https://thwzxkajcqlrkvtoqiuk.supabase.co",
@@ -120,6 +122,7 @@ class DataBaseImpl : DataBaseAPI {
         }
     }
 
+    // Смена пароля
     override fun change_pass(password: String) {
         CoroutineScope(Dispatchers.IO).launch {
             supabase.auth.modifyUser {
@@ -176,7 +179,8 @@ class DataBaseImpl : DataBaseAPI {
 
     override suspend fun add_location(profile: Int, address: String, state_country: String, phone_number: String, others: String) : Int? {
         try {
-            val location = locations(profile = profile, address = address, state_country = state_country, phone_number = phone_number, others = if (others != "") others else "")
+            val location = locations(profile = profile, address = address, state_country = state_country,
+                phone_number = phone_number, others = if (others != "") others else "")
             var new_location = supabase.from("locations").insert(location) {
                 select()
             }.decodeSingle<locations>()
@@ -213,7 +217,8 @@ class DataBaseImpl : DataBaseAPI {
         try {
             val kit = packages(profile = profile, package_items = package_items, weight_item = weight_item, worth_items = worth_items,
                 origin = origin, instant_delivery = instant_delivery, delivery_charges = delivery_charges,
-                instant_delivery_charges = instant_delivery_charges, tax_service_charges = tax_service_charges, tracking_number = tracking_number, rider = Random.nextInt(0, 10))
+                instant_delivery_charges = instant_delivery_charges, tax_service_charges = tax_service_charges,
+                tracking_number = tracking_number, rider = Random.nextInt(0, 10))
 
             val new_package = supabase.from("packages").insert(kit) {
                 select()
